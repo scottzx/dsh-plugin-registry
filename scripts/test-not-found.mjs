@@ -79,6 +79,7 @@ for (const path of [
   "/plugins/dsh-boot-animation",
   "/plugins/dsh-tool-12306",
   "/plugins/dsh-plugin-security",
+  "/plugins/dsh-context",
   "/plugins/modlens.html",
   "/plugins/modlens/",
   "/plugins/dsh-boot-animation.html",
@@ -87,6 +88,8 @@ for (const path of [
   "/plugins/dsh-tool-12306/",
   "/plugins/dsh-plugin-security.html",
   "/plugins/dsh-plugin-security/",
+  "/plugins/dsh-context.html",
+  "/plugins/dsh-context/",
 ]) {
   const res = await statusOf(path);
   assert(res.res.status === 200, `${path} → 200`);
@@ -104,6 +107,12 @@ assert(securityPeer.res.headers.get("x-robots-tag") === "noindex", "/plugins/dsh
 const securityCase = await statusOf("/plugins/Dsh-Plugin-Security");
 assert(securityCase.res.status === 404, "/plugins/Dsh-Plugin-Security → 404");
 assert(securityCase.res.headers.get("x-robots-tag") === "noindex", "/plugins/Dsh-Plugin-Security noindex");
+const contextCase = await statusOf("/plugins/Dsh-Context");
+assert(contextCase.res.status === 404, "/plugins/Dsh-Context → 404");
+assert(contextCase.res.headers.get("x-robots-tag") === "noindex", "/plugins/Dsh-Context noindex");
+const contextFork = await statusOf("/plugins/dsh-context-pro");
+assert(contextFork.res.status === 404, "/plugins/dsh-context-pro → 404");
+assert(contextFork.res.headers.get("x-robots-tag") === "noindex", "/plugins/dsh-context-pro noindex");
 
 for (const path of [
   "/sitemap.xml",
