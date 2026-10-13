@@ -24,6 +24,7 @@ const PAGES = [
   ["/plugins/dsh-boot-animation", "2026-10-10"],
   ["/plugins/dsh-tool-12306", "2026-10-10"],
   ["/plugins/dsh-plugin-security", "2026-10-10"],
+  ["/plugins/dsh-context", "2026-10-12"],
 ];
 function urlEntry(loc, lastmod) {
   return "  <url>\n    <loc>" + loc + "</loc>\n    <lastmod>" + lastmod + "</lastmod>\n    <changefreq>weekly</changefreq>\n  </url>\n";
