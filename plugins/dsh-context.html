@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>dsh-context｜DeepSeek Harness 插件</title>
-<meta name="description" content="dsh-context 是 bowenliang123 的 DeepSeek Harness 插件（Apache-2.0，npm dsh-context@0.69.1）。目录 id bowenliang123/dsh-context。安装：dsh plugin add dsh-context。本页只对应这一包。">
+<meta name="description" content="dsh-context 是 bowenliang123 的 DeepSeek Harness 插件（Apache-2.0，npm dsh-context@0.69.1）。目录 id bowenliang123/dsh-context。安装：dsh plugin --profile web add dsh-context。本页只对应这一包。">
 <link rel="canonical" href="https://dsplugin.app/plugins/dsh-context">
 <meta property="og:title" content="dsh-context｜DeepSeek Harness 插件">
-<meta property="og:description" content="dsh-context 是 bowenliang123 的 DeepSeek Harness 插件（Apache-2.0，npm dsh-context@0.69.1）。目录 id bowenliang123/dsh-context。安装：dsh plugin add dsh-context。本页只对应这一包。">
+<meta property="og:description" content="dsh-context 是 bowenliang123 的 DeepSeek Harness 插件（Apache-2.0，npm dsh-context@0.69.1）。目录 id bowenliang123/dsh-context。安装：dsh plugin --profile web add dsh-context。本页只对应这一包。">
 <meta property="og:url" content="https://dsplugin.app/plugins/dsh-context">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="dsplugin.app">
@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://dsplugin.app/og.svg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="dsh-context｜DeepSeek Harness 插件">
-<meta name="twitter:description" content="dsh-context 是 bowenliang123 的 DeepSeek Harness 插件（Apache-2.0，npm dsh-context@0.69.1）。目录 id bowenliang123/dsh-context。安装：dsh plugin add dsh-context。本页只对应这一包。">
+<meta name="twitter:description" content="dsh-context 是 bowenliang123 的 DeepSeek Harness 插件（Apache-2.0，npm dsh-context@0.69.1）。目录 id bowenliang123/dsh-context。安装：dsh plugin --profile web add dsh-context。本页只对应这一包。">
 <meta name="theme-color" content="#181411">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
@@ -34,7 +34,7 @@
       "name": "dsplugin.app",
       "url": "https://dsplugin.app/",
       "inLanguage": "zh-CN",
-      "description": "dsh-context 是 bowenliang123 的 DeepSeek Harness 插件（Apache-2.0，npm dsh-context@0.69.1）。目录 id bowenliang123/dsh-context。安装：dsh plugin add dsh-context。本页只对应这一包。",
+      "description": "dsh-context 是 bowenliang123 的 DeepSeek Harness 插件（Apache-2.0，npm dsh-context@0.69.1）。目录 id bowenliang123/dsh-context。安装：dsh plugin --profile web add dsh-context。本页只对应这一包。",
       "publisher": {
         "@id": "https://dsplugin.app/#org"
       }
@@ -76,26 +76,34 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "这页是插件目录或完整安装教程吗？",
+          "name": "dsh-context 能看到什么？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "不是。本页只介绍 bowenliang123/dsh-context 这一包。浏览更多插件回 /，安装步骤与排查见 /install。"
+            "text": "五个入口：Context Insights 页是侧栏一级面板，跨会话看 token/费用、7 天用量、活跃热力图和会话卡片；Context 标签是单会话仪表盘，含统计、当前上下文构成、逐请求趋势、上下文浏览器、事件和文件活动；Fleet 标签给出当前 agent、父级和子 agent 的卡片；右侧栏 Context 面板把同一仪表盘放在聊天旁；/context 命令用弹窗显示当前构成和上下文浏览器。"
           }
         },
         {
           "@type": "Question",
-          "name": "怎么装 dsh-context？",
+          "name": "怎么安装/更新？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "dsh plugin add dsh-context。目录安装字段是 dsh plugin --profile web add github:bowenliang123/dsh-context。npm 包是 dsh-context@0.69.1。通用步骤见 /install。"
+            "text": "在 Add plugin 里搜 dsh-context 安装。CLI 执行 dsh plugin --profile web add dsh-context。更新执行 dsh plugin --profile web update dsh-context@latest。然后 dsh web。"
           }
         },
         {
           "@type": "Question",
-          "name": "这页是完整安装教程吗？",
+          "name": "数字准吗？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "不是。本页只介绍 bowenliang123/dsh-context。浏览更多插件回 /，安装与排查见 /install。"
+            "text": "分类数字是估算，和 dsh 内置 token 计量用同一套启发式。趋势详情另列服务端实际值。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "在哪改设置？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plugins → dsh-context → Configuration。本页不是完整教程。浏览更多插件回 /，安装步骤见 /install。"
           }
         }
       ]
@@ -138,7 +146,7 @@
   <section class="page-head">
     <p class="eyebrow">Plugin · dsh-context</p>
     <h1 class="page-title">dsh-context｜DeepSeek Harness 插件</h1>
-    <p class="page-sub">dsh-context 是 bowenliang123 的 DeepSeek Harness 插件（Apache-2.0，npm dsh-context@0.69.1，GitHub 约 2042 stars）。目录 id 是 bowenliang123/dsh-context。本页只对应这一包。</p>
+    <p class="page-sub">dsh-context 是 DeepSeek Harness 的社区插件（Apache-2.0，npm dsh-context&#64;0.69.1，GitHub 2047 stars），在 web/桌面端里给出会话上下文的统计、构成、趋势和事件记录。目录 id 是 bowenliang123/dsh-context。安装：<code>dsh plugin --profile web add dsh-context</code>。本页只对应这一包。</p>
     <section class="evidence-grid" data-plugin-facts data-plugin-id="bowenliang123/dsh-context" aria-label="目录数据">
       <div><span>Manifest 状态</span><strong data-fact="manifest">未检查</strong></div>
       <div><span>版本</span><strong data-fact="version">暂无</strong></div>
@@ -147,15 +155,27 @@
     </section>
   </section>
   <article class="prose">
-    <h2>目录描述</h2>
-    <p>目录条目 <code>bowenliang123/dsh-context</code> 的描述：上下文洞察面板：一眼看清模型上下文窗口的组成与变化——构成对照窗口大小、按请求历史趋势、压缩/注入事件、消息级 token 统计。</p>
     <h2>安装命令</h2>
-    <p>dsh-context 的安装命令写在页面源码里，不依赖 JavaScript。npm 包是 <code>dsh-context&#64;0.69.1</code>。目录安装字段是 GitHub 源。</p>
-    <pre class="cmd"><!--email_off--><code>dsh plugin add dsh-context</code><!--/email_off--></pre>
-    <pre class="cmd"><!--email_off--><code>dsh plugin --profile web add github:bowenliang123/dsh-context</code><!--/email_off--></pre>
-    <p>通用步骤见 <a href="/install">/install</a>。</p>
+    <p>dsh-context 的安装命令写在页面源码里，不依赖 JavaScript。web 或桌面端：Add plugin 搜 <code>dsh-context</code> 安装。CLI：</p>
+    <pre class="cmd"><!--email_off--><code>dsh plugin --profile web add dsh-context</code><!--/email_off--></pre>
+    <p>更新：</p>
+    <pre class="cmd"><!--email_off--><code>dsh plugin --profile web update dsh-context&#64;latest</code><!--/email_off--></pre>
+    <p>然后 <code>dsh web</code>。npm 包是 <code>dsh-context&#64;0.69.1</code>。通用步骤见 <a href="/install">/install</a>。</p>
     <p>仓库：<a href="https://github.com/bowenliang123/dsh-context" target="_blank" rel="noopener">https://github.com/bowenliang123/dsh-context</a></p>
-    <h2>说明</h2>
+    <h2>五个入口</h2>
+    <ul>
+      <li><strong>Context Insights 页</strong>：侧栏一级面板，跨会话看 token/费用、7 天用量、活跃热力图、会话卡片。</li>
+      <li><strong>Context 标签</strong>：单会话仪表盘，含统计、当前上下文构成、逐请求趋势、上下文浏览器、事件、文件活动。</li>
+      <li><strong>Fleet 标签</strong>：当前 agent、父级和子 agent 的卡片。</li>
+      <li><strong>右侧栏 Context 面板</strong>：同一仪表盘放在聊天旁。</li>
+      <li><strong><code>/context</code> 命令</strong>：弹窗显示当前构成和上下文浏览器。</li>
+    </ul>
+    <h2>局限与风险</h2>
+    <ul>
+      <li>分类数字是估算，和 dsh 内置 token 计量用同一套启发式；趋势详情另列服务端实际值。</li>
+      <li>兼容 <code>&#64;deepseek-ai/dsh</code> 0.1.7-rc.2+；界面中英文。</li>
+      <li>System Prompt 前/后缀设置会作用于所有会话和子 agent，改动从下一轮生效。</li>
+    </ul>
     <p>社区插件，不是 DeepSeek 官方内置能力。本页只对应 <code>bowenliang123/dsh-context</code>。本站不审计、不替你装。更多插件回 <a href="/">/</a>，安装见 <a href="/install">/install</a>。</p>
     <ul class="hub-list">
       <li><a href="/install">如何安装</a></li>
@@ -165,9 +185,10 @@
   <section class="faq" id="faq" aria-labelledby="faq-title">
     <div class="section-label"><h2 id="faq-title">常见问题</h2></div>
     <dl class="faq-list">
-      <div><dt>这页是插件目录或完整安装教程吗？</dt><dd>不是。本页只介绍 bowenliang123/dsh-context 这一包。浏览更多插件回 /，安装步骤与排查见 /install。</dd></div>
-      <div><dt>怎么装 dsh-context？</dt><dd><code>dsh plugin add dsh-context</code>。目录安装字段是 <code>dsh plugin --profile web add github:bowenliang123/dsh-context</code>。npm 包是 <code>dsh-context&#64;0.69.1</code>。通用步骤见 <a href="/install">/install</a>。</dd></div>
-      <div><dt>这页是完整安装教程吗？</dt><dd>不是。本页只介绍 <code>bowenliang123/dsh-context</code>。浏览更多插件回 <a href="/">/</a>，安装与排查见 <a href="/install">/install</a>。</dd></div>
+      <div><dt>dsh-context 能看到什么？</dt><dd>五个入口：Context Insights 页是侧栏一级面板，跨会话看 token/费用、7 天用量、活跃热力图和会话卡片；Context 标签是单会话仪表盘，含统计、当前上下文构成、逐请求趋势、上下文浏览器、事件和文件活动；Fleet 标签给出当前 agent、父级和子 agent 的卡片；右侧栏 Context 面板把同一仪表盘放在聊天旁；<code>/context</code> 命令用弹窗显示当前构成和上下文浏览器。</dd></div>
+      <div><dt>怎么安装/更新？</dt><dd>在 Add plugin 里搜 <code>dsh-context</code> 安装。CLI 执行 <code>dsh plugin --profile web add dsh-context</code>。更新执行 <code>dsh plugin --profile web update dsh-context&#64;latest</code>。然后 <code>dsh web</code>。</dd></div>
+      <div><dt>数字准吗？</dt><dd>分类数字是估算，和 dsh 内置 token 计量用同一套启发式。趋势详情另列服务端实际值。</dd></div>
+      <div><dt>在哪改设置？</dt><dd>Plugins → dsh-context → Configuration。本页不是完整教程。浏览更多插件回 <a href="/">/</a>，安装步骤见 <a href="/install">/install</a>。</dd></div>
     </dl>
   </section>
 
