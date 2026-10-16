@@ -76,26 +76,34 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "这页是插件目录或完整安装教程吗？",
+          "name": "不需要 DeepSeek key 也能搜吗？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "不是。本页只介绍 DDDMUC/dsh-free-search 这一包。浏览更多插件回 /，安装步骤与排查见 /install。"
+            "text": "能。dsh 默认搜索依赖 DEEPSEEK_API_KEY；用网关或没有官方 key 时，内置搜索会失败。dsh-free-search 给内置 web_search 换一组搜索 provider，默认引擎是 Bing，不需要 DeepSeek 官方 API key。部分引擎仍要各自的 key，设置页会标注。"
           }
         },
         {
           "@type": "Question",
-          "name": "怎么装 dsh-free-search？",
+          "name": "怎么切换引擎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "dsh plugin --profile web add github:DDDMUC/dsh-free-search。npm 包是 dsh-free-search@0.8.10（无 scope，作者 DDDMUC）。通用步骤见 /install。"
+            "text": "聊天框输入 /free-search-engine，弹窗点选即切换。设置页也可以改引擎，并测试当前引擎（直测，不走回退链）。"
           }
         },
         {
           "@type": "Question",
-          "name": "许可证和仓库是什么？",
+          "name": "怎么安装？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "MIT。仓库是 https://github.com/DDDMUC/dsh-free-search，GitHub 420 stars。本页不是完整教程。浏览更多插件回 /，安装步骤见 /install。"
+            "text": "dsh plugin --profile web add github:DDDMUC/dsh-free-search。装完执行 dsh web。通用步骤见 /install。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "这页和本站其他页是什么关系？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "本页不是完整教程，只介绍 DDDMUC/dsh-free-search 这一包。浏览更多插件回 /，安装步骤见 /install。"
           }
         }
       ]
@@ -138,7 +146,7 @@
   <section class="page-head">
     <p class="eyebrow">Plugin · dsh-free-search</p>
     <h1 class="page-title">dsh-free-search｜DeepSeek Harness 插件</h1>
-    <p class="page-sub">dsh-free-search 是 DDDMUC 的 DeepSeek Harness 插件（MIT，npm dsh-free-search&#64;0.8.10，GitHub 420 stars）。目录 id 是 DDDMUC/dsh-free-search。安装：<code>dsh plugin --profile web add github:DDDMUC/dsh-free-search</code>。本页只对应这一包。</p>
+    <p class="page-sub">dsh-free-search 是 DDDMUC 维护的 DeepSeek Harness 社区插件（MIT，npm dsh-free-search&#64;0.8.10），给内置 <code>web_search</code> 换一组搜索 provider：默认引擎 Bing，不需要 DeepSeek 官方 API key。目录 id 是 DDDMUC/dsh-free-search。安装：<code>dsh plugin --profile web add github:DDDMUC/dsh-free-search</code>。本页只对应这一包。</p>
     <section class="evidence-grid" data-plugin-facts data-plugin-id="DDDMUC/dsh-free-search" aria-label="目录数据">
       <div><span>Manifest 状态</span><strong data-fact="manifest">未检查</strong></div>
       <div><span>版本</span><strong data-fact="version">暂无</strong></div>
@@ -150,9 +158,21 @@
     <h2>安装命令</h2>
     <p>dsh-free-search 的安装命令写在页面源码里，不依赖 JavaScript。npm 包是 <code>dsh-free-search&#64;0.8.10</code>（无 scope，作者 DDDMUC）。</p>
     <pre class="cmd"><!--email_off--><code>dsh plugin --profile web add github:DDDMUC/dsh-free-search</code><!--/email_off--></pre>
-    <p>通用步骤见 <a href="/install">/install</a>。</p>
+    <p>装完执行 <code>dsh web</code>。通用步骤见 <a href="/install">/install</a>。</p>
     <p>仓库：<a href="https://github.com/DDDMUC/dsh-free-search" target="_blank" rel="noopener">https://github.com/DDDMUC/dsh-free-search</a></p>
-    <h2>说明</h2>
+    <h2>引擎与工具</h2>
+    <ul>
+      <li>dsh 默认搜索依赖 <code>DEEPSEEK_API_KEY</code>。走网关，或没有官方 key 时，内置搜索会失败。</li>
+      <li>多引擎，失败自动回退。部分引擎要各自的 key，设置页会标注。默认引擎是 Bing。</li>
+      <li>聊天框输入 <code>/free-search-engine</code> 弹窗切换引擎。设置页可以改引擎，并测试当前引擎（直测，不走回退链）。</li>
+      <li>额外工具：<code>advanced_search</code>（时间过滤）、<code>platform_search</code>、<code>video_search</code>、<code>research</code>。</li>
+    </ul>
+    <h2>局限</h2>
+    <ul>
+      <li>免费引擎有限流和反爬，靠回退兜底。付费引擎要自配 key。</li>
+      <li>加载后自动接管搜索 provider，仅当未设置或仍是 <code>deepseek-official</code>。接管的 provider id 固定为 <code>ddg</code>（插件注册名，不是 DuckDuckGo 引擎）；实际引擎由设置决定，默认 Bing。</li>
+      <li>搜索结果按不可信外部数据处理。</li>
+    </ul>
     <p>社区插件，MIT 许可，不是 DeepSeek 官方内置能力。本页只对应 <code>DDDMUC/dsh-free-search</code>。本站不审计、不替你装。更多插件回 <a href="/">/</a>，安装见 <a href="/install">/install</a>。</p>
     <ul class="hub-list">
       <li><a href="/install">如何安装</a></li>
@@ -162,9 +182,10 @@
   <section class="faq" id="faq" aria-labelledby="faq-title">
     <div class="section-label"><h2 id="faq-title">常见问题</h2></div>
     <dl class="faq-list">
-      <div><dt>这页是插件目录或完整安装教程吗？</dt><dd>不是。本页只介绍 DDDMUC/dsh-free-search 这一包。浏览更多插件回 /，安装步骤与排查见 /install。</dd></div>
-      <div><dt>怎么装 dsh-free-search？</dt><dd><code>dsh plugin --profile web add github:DDDMUC/dsh-free-search</code>。npm 包是 <code>dsh-free-search&#64;0.8.10</code>（无 scope，作者 DDDMUC）。通用步骤见 <a href="/install">/install</a>。</dd></div>
-      <div><dt>许可证和仓库是什么？</dt><dd>MIT。仓库是 <a href="https://github.com/DDDMUC/dsh-free-search" target="_blank" rel="noopener">https://github.com/DDDMUC/dsh-free-search</a>，GitHub 420 stars。本页不是完整教程。浏览更多插件回 <a href="/">/</a>，安装步骤见 <a href="/install">/install</a>。</dd></div>
+      <div><dt>不需要 DeepSeek key 也能搜吗？</dt><dd>能。dsh 默认搜索依赖 <code>DEEPSEEK_API_KEY</code>；用网关或没有官方 key 时，内置搜索会失败。dsh-free-search 给内置 <code>web_search</code> 换一组搜索 provider，默认引擎是 Bing，不需要 DeepSeek 官方 API key。部分引擎仍要各自的 key，设置页会标注。</dd></div>
+      <div><dt>怎么切换引擎？</dt><dd>聊天框输入 <code>/free-search-engine</code>，弹窗点选即切换。设置页也可以改引擎，并测试当前引擎（直测，不走回退链）。</dd></div>
+      <div><dt>怎么安装？</dt><dd><code>dsh plugin --profile web add github:DDDMUC/dsh-free-search</code>。装完执行 <code>dsh web</code>。通用步骤见 <a href="/install">/install</a>。</dd></div>
+      <div><dt>这页和本站其他页是什么关系？</dt><dd>本页不是完整教程，只介绍 DDDMUC/dsh-free-search 这一包。浏览更多插件回 <a href="/">/</a>，安装步骤见 <a href="/install">/install</a>。</dd></div>
     </dl>
   </section>
 
